@@ -1,0 +1,156 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	font: 62.5% verdana, arial, sans-serif;
+}
+
+h1 {
+	margin: 0 0 1em;
+	font-size: 200%;
+	font-weight: bold;
+}
+
+h2 {
+	margin: 0 0 1em;
+	font-size: 160%;
+	font-weight: bold;
+}
+
+h3 {
+	margin: 0 0 1em;
+	font-size: 130%;
+	font-weight: bold;
+}
+
+p {
+	margin: 0 0 1em;
+	font-size: 130%;
+}
+
+small {
+	font-size: 70%;
+}
+
+.container {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	font-size: 130%;
+}
+
+.panel {
+	padding: 20px;
+	min-height: 100%;
+	-webkit-transition: margin 0.4s ease-out;
+	-moz-transition: margin 0.4s ease-out;
+	-o-transition: margin 0.4s ease-out;
+	transition: margin 0.4s ease-out;
+}
+
+.panel-left {
+	float: left;
+	width: 70%;
+	margin-left: -70%;
+	background: #999;
+}
+
+.panel-main {
+	float: left;
+	width: 100%;
+	margin-left: 0;
+	background: #fff;
+}
+
+.panel-right {
+	float: left;
+	margin-right: -200%;
+	width: 70%;
+	background: #999;
+}
+
+.pull-right .panel-left {
+	margin-left: 0;
+}
+
+.pull-right .panel-main {
+	margin-right: -100%;
+}
+
+.pull-right .panel-right {
+	margin-left: 100%;
+}
+
+.pull-left .panel-left {
+	margin-left: -100%;
+}
+
+.pull-left .panel-main {
+	margin-left: -70%;
+}
+
+.pull-left .panel-right {
+	margin-left: 0;
+}
+
+@media screen and (min-width: 699px) {
+	.panel-main {
+		width: 70%;
+	}
+	.panel-right {
+		margin: 0;
+		width: 30%;
+	}
+}

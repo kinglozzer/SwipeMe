@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<link rel="stylesheet" type="text/css" href="assets/style.css" />
+</head>
+<body>
+	<div id="swipeme" class="container">
+		<div id="swipeme-left" class="panel panel-left">
+			<h1>Off-canvas left</h1>
+		</div>
+		<div id="swipeme-main" class="panel panel-main">
+			<h1>SwipeMe <small>A lightweight library for swiping off-canvas menus</small></h1>
+			<p>SwipeMe is a Javascript library built to swipe open/close off-canvas navigation menus &ndash; currently relying on CSS3 animations. When a swipe is detected, SwipeMe will add (or remove) the appropriate CSS class from a main 'container' element. For an in-depth example of how to implement an off-canvas navigation pattern, see <a href="http://jasonweaver.name/lab/offcanvas/" target="_blank">this brilliant example</a> by Jason Weaver.</p>
+			<h2>Implementation</h2>
+			<h3>HTML</h3>
+			<pre>
+&lt;div id="swipeme"&gt;
+	&lt;div class="off-canvas-left">Left off-canvas&lt;/div&gt;
+	&lt;div class="main-content">Main content&lt;/div&gt;
+	&lt;div class="off-canvas-right">Right off-canvas&lt;/div&gt;
+&lt;/div&gt;
+			</pre>
+			<h3>Javascript</h3>
+			<pre>
+var swipe = new SwipeMe(document.getElementById('swipeme'));
+			</pre>
+		</div>
+		<div id="swipeme-right" class="panel panel-right">
+			<h2>Customisation</h2>
+			<h3>Custom class names</h3>
+			<pre>
+var swipe = new SwipeMe(
+    document.getElementById('swipeme'),
+    {
+        accessClasses: {
+            left: 'reveal-left',
+            right: 'reveal-right'
+        }
+    }
+);
+			</pre>
+			<h3>Set a specific direction</h3>
+			<p>Useful if you only have an off-canvas menu on one side of your website</p>
+			<pre>
+var swipe = new SwipeMe(
+    document.getElementById('swipeme'),
+    {
+        direction: "left"
+    }
+);
+			</pre>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="../swipeme.js"></script>
+	<script type="text/javascript" src="assets/application.js"></script>
+</body>
+</html>
