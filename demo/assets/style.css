@@ -1,90 +1,10 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+.jumbotron {
+	background: #66bb22;
+	color: #ffffff;
+	border-radius: 6px;
 }
 
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-body {
-	font: 62.5% verdana, arial, sans-serif;
-}
-
-h1 {
-	margin: 0 0 1em;
-	font-size: 200%;
-	font-weight: bold;
-}
-
-h2 {
-	margin: 0 0 1em;
-	font-size: 160%;
-	font-weight: bold;
-}
-
-h3 {
-	margin: 0 0 1em;
-	font-size: 130%;
-	font-weight: bold;
-}
-
-p {
-	margin: 0 0 1em;
-	font-size: 130%;
-}
-
-small {
-	font-size: 70%;
-}
-
-.container {
+.main {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
@@ -102,23 +22,29 @@ small {
 
 .panel-left {
 	float: left;
-	width: 70%;
-	margin-left: -70%;
-	background: #999;
+	width: 85%;
+	margin-left: -100%;
+	border-right: solid 1px #CCC;
 }
 
 .panel-main {
+	position: relative;
 	float: left;
 	width: 100%;
 	margin-left: 0;
 	background: #fff;
 }
 
+.panel-main .contents {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
 .panel-right {
 	float: left;
 	margin-right: -200%;
-	width: 70%;
-	background: #999;
+	width: 85%;
+	border-left: solid 1px #CCC;
 }
 
 .pull-right .panel-left {
@@ -138,19 +64,69 @@ small {
 }
 
 .pull-left .panel-main {
-	margin-left: -70%;
+	margin-left: -85%;
 }
 
 .pull-left .panel-right {
 	margin-left: 0;
 }
 
-@media screen and (min-width: 699px) {
-	.panel-main {
-		width: 70%;
+.trigger {
+	display: none;
+	position: absolute;
+	overflow: hidden;
+	width: 40px; height: 65px;
+	background: #66bb22;
+}
+
+.trigger span {
+	color: #fff;
+	position: absolute;
+	top: 6px;
+}
+
+.trigger-left {
+	top: 30px; left: 0;
+	border-top-right-radius: 6px;
+	border-bottom-right-radius: 6px;
+}
+
+.trigger-left span {
+	left: 6px;
+}
+
+.trigger-right {
+	top: 30px; right: 0;
+	border-top-left-radius: 6px;
+	border-bottom-left-radius: 6px;
+}
+
+.trigger-right span {
+	right: 6px;
+}
+
+@media screen and (max-width: 600px) {
+	code, pre {
+		font-size: 50%;
+	}
+}
+
+@media screen and (min-width: 1000px) {
+	.trigger-left {
+		display: block;
+	}
+	.trigger-right {
+		display: block;
+	}
+
+	.panel-left {
+		width: 25%;
+		margin-left: -25%;
 	}
 	.panel-right {
-		margin: 0;
-		width: 30%;
+		width: 25%;
+	}
+	.pull-left .panel-main {
+		margin-left: -25%;
 	}
 }

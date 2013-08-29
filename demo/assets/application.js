@@ -43,3 +43,23 @@ var swipe = new SwipeMe(
         }
     }
 );
+
+function triggerLeft(event) {
+    if (document.getElementById('swipeme').className.indexOf('pull-right') === -1) {
+        swipe.swipe('right');
+    } else {
+        swipe.swipe('left');
+    }
+
+    event.preventDefault();
+}
+
+function triggerRight(event) {
+    if (document.getElementById('swipeme').className.indexOf('pull-left') === -1) {
+        swipe.swipe('left');
+    } else {
+        swipe.swipe('right');
+    }
+
+    event.preventDefault();
+}

@@ -146,4 +146,11 @@ function SwipeMe(container, userOptions) {
         document.addEventListener('touchmove', events);
         document.addEventListener('touchend', events);
     }
+
+    return {
+        swipe: function(dir) {
+            dir = (dir === 'left') ? 'left' : 'right';
+            actions.swipe(dir);
+        }
+    }
 }
