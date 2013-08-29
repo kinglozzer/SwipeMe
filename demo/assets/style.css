@@ -24,7 +24,6 @@
 	float: left;
 	width: 85%;
 	margin-left: -100%;
-	border-right: solid 1px #CCC;
 }
 
 .panel-main {
@@ -44,7 +43,6 @@
 	float: left;
 	margin-right: -200%;
 	width: 85%;
-	border-left: solid 1px #CCC;
 }
 
 .pull-right .panel-left {

@@ -9,13 +9,15 @@
 	<div id="swipeme" class="main">
 		<div id="swipeme-left" class="panel panel-left">
 			<div class="page-header">
-				<h3>About</h3>
+				<h2>About</h2>
 			</div>
 			<p>Built by Loz Calver:</p>
 			<ul>
 				<li><a href="https://github.com/kinglozzer" target="_blank">Github</a></li>
 				<li><a href="https://twitter.com/kinglozzer" target="_blank">Twitter</a></li>
 			</ul>
+			<h3>Todo</h3>
+			<p>In version 2 I intend to rebuild SwipeMe from the ground-up, removing all CSS requirements and instead managing the menu transitions and positioning with Javascript - using CSS translations and fallbacks where possible.</p>
 		</div>
 		<div id="swipeme-main" class="panel panel-main">
 			<a href="#" class="trigger trigger-left" onclick="triggerLeft(event)"><span class="glyphicon glyphicon-align-justify"></span></a>
@@ -75,9 +77,9 @@ var swipe = new SwipeMe(document.getElementById('swipeme'));
 		</div>
 		<div id="swipeme-right" class="panel panel-right">
 			<div class="page-header">
-				<h3>Caveats</h3>
+				<h2>Caveats</h2>
 			</div>
-			<p></p>
+			<p>As the library currently only adds and removes CSS classes, all animations are CSS-generated &ndash; so &lt;=IE9 and Opera Mini won't get any animations.</p>
 		</div>
 	</div>
 
