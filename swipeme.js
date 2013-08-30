@@ -113,7 +113,7 @@ function SwipeMe(container, userOptions) {
                 event.preventDefault();
             }
         },
-        touchend: function(event) {
+        touchend: function() {
             if (events.isHorizontal && ! events.invalidTarget) {
                 var swipeDir = (events.differences.x > 0) ? 'right' : 'left';
 
@@ -152,5 +152,5 @@ function SwipeMe(container, userOptions) {
             dir = (dir === 'left') ? 'left' : 'right';
             actions.swipe(dir);
         }
-    }
+    };
 }
