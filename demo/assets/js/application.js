@@ -63,3 +63,5 @@ function triggerRight(event) {
 
     event.preventDefault();
 }
+
+SyntaxHighlighter.all();
