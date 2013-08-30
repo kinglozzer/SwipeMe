@@ -14,8 +14,8 @@
 		<a href="#" class="trigger trigger-right" style="float: right;" onclick="triggerRight(event)"><span class="glyphicon glyphicon-align-justify"></span></a>
 		<div class="container">
 			<div class="nav">
-				<a href="#">Home</a>
-				<a href="#">Download</a>
+				<a href="http://kinglozzer.github.io/SwipeMe/demo/index.html">Home</a>
+				<a href="https://github.com/kinglozzer/SwipeMe/" target="_blank">Download</a>
 			</div>
 		</div>
 		
@@ -45,7 +45,7 @@
 				<p>SwipeMe is a Javascript library built to swipe open/close off-canvas navigation menus &ndash; currently relying on CSS3 animations. When a swipe is detected, SwipeMe will add (or remove) the appropriate CSS class from a main 'container' element. For an in-depth example of how to implement an off-canvas navigation pattern, see <a href="http://jasonweaver.name/lab/offcanvas/" target="_blank">this brilliant example</a> by Jason Weaver.</p>
 				<h2>Implementation</h2>
 				<h3>HTML</h3>
-				<pre class="brush: php">
+				<pre class="brush: php" data-swipeme-ignore="true">
 &lt;div id="swipeme"&gt;
 	&lt;div class="off-canvas-left">Left off-canvas&lt;/div&gt;
 	&lt;div class="main-content">Main content&lt;/div&gt;
@@ -53,7 +53,7 @@
 &lt;/div&gt;
 				</pre>
 				<h3>Javascript</h3>
-				<pre class="brush: js">
+				<pre class="brush: js" data-swipeme-ignore="true">
 var swipe = new SwipeMe(document.getElementById('swipeme'));
 				</pre>
 				<h2>Customisation</h2>
