@@ -109,7 +109,7 @@ function SwipeMe(container, userOptions) {
                 events.isHorizontal = (Math.abs(events.differences.x) > Math.abs(events.differences.y));
             }
 
-            if (events.isHorizontal) {
+            if (events.isHorizontal && ! events.invalidTarget) {
                 event.preventDefault();
             }
         },
