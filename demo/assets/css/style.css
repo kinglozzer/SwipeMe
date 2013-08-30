@@ -95,40 +95,6 @@
 	margin-left: 0;
 }
 
-/*.trigger {
-	display: none;
-	position: absolute;
-	overflow: hidden;
-	width: 40px; height: 65px;
-	background: #66bb22;
-}
-
-.trigger span {
-	color: #fff;
-	position: absolute;
-	top: 6px;
-}
-
-.trigger-left {
-	top: 30px; left: 0;
-	border-top-right-radius: 6px;
-	border-bottom-right-radius: 6px;
-}
-
-.trigger-left span {
-	left: 6px;
-}
-
-.trigger-right {
-	top: 30px; right: 0;
-	border-top-left-radius: 6px;
-	border-bottom-left-radius: 6px;
-}
-
-.trigger-right span {
-	right: 6px;
-}*/
-
 @media screen and (max-width: 600px) {
 	code, pre {
 		font-size: 50%;
