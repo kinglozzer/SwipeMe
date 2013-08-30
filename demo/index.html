@@ -2,10 +2,21 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-	<link rel="stylesheet" type="text/css" href="assets/bootstrap.min.css" />
-	<link rel="stylesheet" type="text/css" href="assets/style.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
 </head>
 <body>
+	<div class="navigation">
+		<a href="#" class="trigger trigger-left" style="float: left;" onclick="triggerLeft(event)"><span class="glyphicon glyphicon-align-justify"></span></a>
+		<a href="#" class="trigger trigger-right" style="float: right;" onclick="triggerRight(event)"><span class="glyphicon glyphicon-align-justify"></span></a>
+		<div class="container">
+			<div class="nav">
+				<a href="#">Home</a>
+				<a href="#">Download</a>
+			</div>
+		</div>
+		
+	</div>
 	<div id="swipeme" class="main">
 		<div id="swipeme-left" class="panel panel-left">
 			<div class="page-header">
@@ -20,7 +31,6 @@
 			<p>In version 2 I intend to rebuild SwipeMe from the ground-up, removing all CSS requirements and instead managing the menu transitions and positioning with Javascript - using CSS translations and fallbacks where possible.</p>
 		</div>
 		<div id="swipeme-main" class="panel panel-main">
-			<a href="#" class="trigger trigger-left" onclick="triggerLeft(event)"><span class="glyphicon glyphicon-align-justify"></span></a>
 			<div class="contents">
 				<div class="jumbotron">
 					<div class="container">
@@ -79,11 +89,14 @@ var swipe = new SwipeMe(document.getElementById('swipeme'));
 			<div class="page-header">
 				<h2>Caveats</h2>
 			</div>
-			<p>As the library currently only adds and removes CSS classes, all animations are CSS-generated &ndash; so &lt;=IE9 and Opera Mini won't get any animations.</p>
+			<h3>Browser Support</h3>
+			<p>As the library currently only adds and removes CSS classes, all animations are CSS-generated &ndash; so &lt;=IE9 and Opera Mini won't get any animations. Ancient versions of IE will need also the Array.indexOf prototype available <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf" target="_blank">here</a>.</p>
+			<h3>iOS 7</h3>
+			<p>iOS 7 adds swipe navigation gestures to Safari, which (as far as I'm aware) can't be disabled. It's still possible to use this library with iOS 7 &ndash; the native gestures are only triggered when swiping from the very edge of the page.</p>
 		</div>
 	</div>
 
 	<script type="text/javascript" src="../swipeme.js"></script>
-	<script type="text/javascript" src="assets/application.js"></script>
+	<script type="text/javascript" src="assets/js/application.js"></script>
 </body>
 </html>

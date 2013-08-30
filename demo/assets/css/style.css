@@ -1,3 +1,29 @@
+.navigation {
+	background: #66bb22;
+}
+
+
+
+.navigation a {
+	display: inline-block;
+	line-height: 50px;
+	padding: 0 15px;
+}
+
+.navigation a:link, .navigation a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+.navigation a:hover {
+	background: #33bb22;
+}
+
+.navigation a:last-child {
+	border: none;
+}
+
 .jumbotron {
 	background: #66bb22;
 	color: #ffffff;
@@ -69,7 +95,7 @@
 	margin-left: 0;
 }
 
-.trigger {
+/*.trigger {
 	display: none;
 	position: absolute;
 	overflow: hidden;
@@ -101,7 +127,7 @@
 
 .trigger-right span {
 	right: 6px;
-}
+}*/
 
 @media screen and (max-width: 600px) {
 	code, pre {
