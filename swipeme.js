@@ -1,4 +1,4 @@
-/*
+/*!
  * SwipeMe
  * Author: Loz Calver
  *
@@ -15,39 +15,31 @@ function SwipeMe(container, userOptions) {
         direction: ['left', 'right']
     },
     utils = {
-        prepClass: function(cssClass) {
-            return (" " + cssClass + " ").replace(/[\t\r\n\f]/g, " ");
-        },
         hasClass: function(obj, cssClass) {
-            var className = " " + cssClass + " ";
-            return (this.prepClass(obj.className).indexOf(className) >= 0);
+            var re = new RegExp("\\b" + cssClass + "\\b", 'g');
+            return (obj.className.match(re) !== null);
         },
         addClass: function(obj, cssClass) {
-            var current = (obj.className ? this.prepClass(obj.className) : "");
+            var current = obj.className || '';
+            var re = new RegExp("\\b" + cssClass + "\\b", 'g');
 
-            if (current.indexOf(" " + cssClass + " ") < 0) {
-                current += cssClass;
-                obj.className = current.trim();
+            if (current.match(re) === null) {
+                obj.className = (current += ' ' + cssClass).trim();
             }
         },
         removeClass: function(obj, cssClass) {
-            var current = (obj.className ? this.prepClass(obj.className) : "");
+            var current = obj.className || '';
+            var re = new RegExp("\\b" + cssClass + "\\b", 'g');
 
-            if (current) {
-                while (current.indexOf(" " + cssClass + " ") >= 0) {
-                    current = current.replace(" " + cssClass + " ", " ");
-                }
-                obj.className = current.trim();
-            }
+            obj.className = current.replace(re, '').trim();
         },
         parentUntilAttr: function(obj, attr) {
             if (obj.getAttribute && obj.getAttribute(attr)) {
                 return obj;
             } else if (obj.parentNode) {
                 return this.parentUntilAttr(obj.parentNode, attr);
-            } else {
-                return false;
             }
+            return false;
         }
     },
     actions = {
@@ -58,12 +50,9 @@ function SwipeMe(container, userOptions) {
             // If the opposite side is already open, close it
             if (utils.hasClass(container, options.accessClasses[dir])) {
                 utils.removeClass(container, options.accessClasses[dir]);
-            // If the side we're trying to expose isn't already open
-            } else if ( ! utils.hasClass(container, options.accessClasses[access])) {
-                // Check if we're allowed to expose the panel
-                if (options.direction.indexOf(access) !== -1) {
-                    utils.addClass(container, options.accessClasses[access]);
-                }
+            } else if ( ! utils.hasClass(container, options.accessClasses[access]) && options.direction.indexOf(access) !== -1) {
+            // If the side we're trying to expose isn't already open and if we're allowed to expose the panel
+                utils.addClass(container, options.accessClasses[access]);
             }
         }
     },
@@ -133,7 +122,7 @@ function SwipeMe(container, userOptions) {
                 options[opt] = userOptions[opt];
             }
         }
-        
+
         if (typeof options.direction === 'string') {
             options.direction = [options.direction];
         }
@@ -149,7 +138,8 @@ function SwipeMe(container, userOptions) {
 
     return {
         swipe: function(dir) {
-            dir = (dir === 'left') ? 'left' : 'right';
+            // if dir is undefined assume left as is most common
+            dir = dir || 'left';
             actions.swipe(dir);
         }
     };
