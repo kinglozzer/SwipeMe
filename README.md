@@ -79,7 +79,7 @@ You may wish to prevent SwipeMe from triggering a swipe event when touching cert
 
 ##Caveats##
 ###Browser Support###
-As the library currently only adds and removes CSS classes, all animations are CSS-generated – so <=IE9 and Opera Mini won't get any animations. Ancient versions of IE will need also the Array.indexOf prototype [available here](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf).
+As the library currently only adds and removes CSS classes, all animations are CSS-generated – so <=IE9 and Opera Mini won't get any animations. Ancient versions of IE (<IE9) will need to use the `swipeme.ltie9.js` plugin to provide `Array.indexOf()` and `String.trim()` support.
 
 ###Windows Phone###
 Currently not supported as it doesn't support `touchstart`/`touchmove`/`touchend` events. Need to delve deeper into MSPointerEvents etc. A pull request for support would be gratefully accepted.
