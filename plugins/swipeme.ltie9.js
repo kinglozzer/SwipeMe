@@ -1,5 +1,5 @@
 /*!
- * SwipeMe >IE9 support plugin
+ * SwipeMe <IE9 support plugin
  * Author: Loz Calver
  *
  * Of course old IE doesn't support touch events, so this is just to enable the
