@@ -4,10 +4,11 @@
  *
  * Copyright 2013, MIT License
  */
-function SwipeMe(container, userOptions) {
+(function SwipeMe() {
     "use strict";
 
-    var options = {
+    var container,
+        options = {
         accessClasses: {
             left: 'access-left',
             right: 'access-right'
@@ -115,7 +116,9 @@ function SwipeMe(container, userOptions) {
         }
     };
 
-    function setup(userOptions) {
+    function setup(cont, userOptions) {
+        container = cont;
+
         var opt;
         for (opt in options) {
             if (typeof userOptions[opt] !== 'undefined') {
@@ -126,9 +129,15 @@ function SwipeMe(container, userOptions) {
         if (typeof options.direction === 'string') {
             options.direction = [options.direction];
         }
-    }
 
-    setup(userOptions);
+        return {
+            swipe: function(dir) {
+                // if dir is undefined assume left as is most common
+                dir = dir || 'left';
+                actions.swipe(dir);
+            }
+        };
+    }
 
     if (window.addEventListener) {
         document.addEventListener('touchstart', events);
@@ -136,11 +145,14 @@ function SwipeMe(container, userOptions) {
         document.addEventListener('touchend', events);
     }
 
-    return {
-        swipe: function(dir) {
-            // if dir is undefined assume left as is most common
-            dir = dir || 'left';
-            actions.swipe(dir);
-        }
+    window.SwipeMe = setup;
+    window.SwipeMe.extend = function() {
+        return {
+            container: container,
+            options: options,
+            utils: utils,
+            actions: actions,
+            events: events
+        };
     };
-}
+})();
