@@ -17,7 +17,8 @@ module.exports = function(grunt) {
 		uglify: {
 			dist: {
 				files: {
-					'swipeme.min.js' : ['swipeme.js']
+					'swipeme.min.js' : ['swipeme.js'],
+					'plugins/swipeme.ltie9.min.js' : ['plugins/swipeme.ltie9.js']
 				},
 				options: {
 					preserveComments: 'some'
