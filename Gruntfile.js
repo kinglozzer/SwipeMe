@@ -18,7 +18,8 @@ module.exports = function(grunt) {
 			dist: {
 				files: {
 					'swipeme.min.js' : ['swipeme.js'],
-					'plugins/swipeme.ltie9.min.js' : ['plugins/swipeme.ltie9.js']
+					'plugins/swipeme.ltie9.min.js' : ['plugins/swipeme.ltie9.js'],
+					'plugins/swipeme.mouse.min.js' : ['plugins/swipeme.mouse.js']
 				},
 				options: {
 					preserveComments: 'some'
